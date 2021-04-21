@@ -16,8 +16,6 @@
 <br>
 <br>
 # Kullanımı
-<hr>
-<code>
 <?php
 require 'api.class.php';
 
@@ -36,4 +34,3 @@ $api->status(200);
 //JSON'u gönder
 $api->send();
 ?>
-</code>
