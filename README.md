@@ -13,8 +13,6 @@
   <li>JSONP ve jQuery uyumlu.</li>
 </ul>
 <b>* JSON bir nesne gösterimi olduğu için nesneler optimize edilmektedir.</b>
-<br>
-<br>
 
 ## Kullanımı
 
