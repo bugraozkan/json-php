@@ -74,8 +74,8 @@ $api->send(JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
 
 ## JSON doğrulama
 
-JSON'u doğrulamak için, JSON dizesini make() yöntemi aracılığıyla geri alabilir ve ardından başka bir kitaplıktan geçirebilirsiniz.
+JSON'u doğrulamak için, JSON dizesini encode() yöntemi aracılığıyla geri alabilir ve ardından başka bir kitaplıktan geçirebilirsiniz.
 
 ```php
-$jsonString = $api->make();
+$jsonString = $api->encode();
 ```
