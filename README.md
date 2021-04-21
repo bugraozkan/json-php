@@ -15,8 +15,8 @@
 <b>* JSON bir nesne gösterimi olduğu için nesneler optimize edilmektedir.</b>
 <br>
 <br>
-<h3>Kullanımı</h3>
-<hr>
+
+## Kullanımı
 
 ```php
 <?php
