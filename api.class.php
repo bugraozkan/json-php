@@ -100,4 +100,3 @@ class api
         echo json_encode($this, $options);
         echo ');';
     }
-}
