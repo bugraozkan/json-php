@@ -62,7 +62,7 @@ Yapıcı, geri dönüş ile veya bir değişken içinde JSON, JSONP göndermeniz
   > var variable = {  ...  };
 ```
 
-### JSON doğrulama
+## JSON doğrulama
 
 JSON'u doğrulamak için, JSON dizesini make() yöntemi aracılığıyla geri alabilir ve ardından başka bir kitaplıktan geçirebilirsiniz.
 
@@ -72,7 +72,7 @@ $jsonString = $api->make();
 
 #### Seçenekler
 
-[Varsayılan seçenekler kullanılmaktadır.](http://php.net/manual/en/function.json-encode.php#example-4366)
+[Varsayılan seçenekler kullanılmaktadır.](http://php.net/manual/en/function.json-encode.php)
 
 Örnek:
 
