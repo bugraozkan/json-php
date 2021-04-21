@@ -61,3 +61,21 @@ Yapıcı, geri dönüş ile veya bir değişken içinde JSON, JSONP göndermeniz
   $api->var('variable', options);
   > var variable = {  ...  };
 ```
+
+### JSON doğrulama
+
+JSON'u doğrulamak için, JSON dizesini make() yöntemi aracılığıyla geri alabilir ve ardından başka bir kitaplıktan geçirebilirsiniz.
+
+```php
+$jsonString = $api->make();
+```
+
+#### Seçenekler
+
+[Varsayılan seçenekler kullanılmaktadır.](http://php.net/manual/en/function.json-encode.php#example-4366)
+
+Örnek:
+
+```php 
+$api->send(JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+```
