@@ -38,3 +38,28 @@ $api->status(200);
 $api->send();
 ?>
 ```
+
+<h3>JSON seçenekleri</h3>
+<hr>
+Yapıcı, geri dönüş ile veya bir değişken içinde JSON, JSONP göndermenize izin verir.
+
+#### simply a JSON
+
+```php
+  $json->send(options);
+  > {  ...  }
+```
+
+#### Callback JSONP
+
+```php
+  $json->send_callback('myCallback', options);
+  > myCallback({  ...  });
+```
+
+#### Varibale JSONP
+
+```php
+  $json->send_var('myVariable', options);
+  > var myVariable = {  ...  };
+```
