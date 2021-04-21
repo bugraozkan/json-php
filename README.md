@@ -44,20 +44,20 @@ Yapıcı, geri dönüş ile veya bir değişken içinde JSON, JSONP göndermeniz
 #### Normal JSON
 
 ```php
-  $json->send(options);
+  $api->send(options);
   > {  ...  }
 ```
 
 #### Geri dönüş JSONP
 
 ```php
-  $json->callback('myCallback', options);
-  > myCallback({  ...  });
+  $api->callback('callback', options);
+  > callback({  ...  });
 ```
 
 #### Değişken JSONP
 
 ```php
-  $json->var('myVariable', options);
-  > var myVariable = {  ...  };
+  $api->var('variable', options);
+  > var variable = {  ...  };
 ```
