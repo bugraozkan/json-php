@@ -19,26 +19,21 @@
 
 ```php
 <?php
+require 'api.class.php';
 
-    include('../includes/json.php');
-  
-    use \Simple\json;
-    
-    $json = new json();
-  
-    // Ojects to send (fetched from the DB for example)
-    $object = new stdClass();
-    $object->LastLog = '123456789123456';
-    $object->Password = 'Mypassword';
-    $object->Dramatic = 'Cat';
-    $object->Things = array(1,2,3);
-    
-    // Forge the JSON
-    $json->data = $object;
-    $json->user = AlexisTM;
-    $json->status = 'online';
-    
-    // Send the JSON
-    $json->send();
+use BasicAPI\api;
+
+$api = new api();
+
+//JSON'u oluştur
+$api->name = 'buğra';
+$api->surname = 'özkan';
+$api->age = '17';
+
+//HTTP durum kodu belirle
+$api->status(200);
+
+//JSON'u gönder
+$api->send();
 ?>
 ```
