@@ -15,8 +15,8 @@
 <b>* JSON bir nesne gösterimi olduğu için nesneler optimize edilmektedir.</b>
 <br>
 <br>
-# Kullanımı
-
+<h3>Kullanımı</h3>
+<hr>
 ```php
 <?php
 require 'api.class.php';
