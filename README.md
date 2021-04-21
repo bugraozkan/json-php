@@ -39,27 +39,27 @@ $api->send();
 ?>
 ```
 
-<h3>JSON seçenekleri</h3>
-<hr>
+## JSON seçenekleri
+
 Yapıcı, geri dönüş ile veya bir değişken içinde JSON, JSONP göndermenize izin verir.
 
-#### simply a JSON
+#### Normal JSON
 
 ```php
   $json->send(options);
   > {  ...  }
 ```
 
-#### Callback JSONP
+#### Geri dönüş JSONP
 
 ```php
-  $json->send_callback('myCallback', options);
+  $json->callback('myCallback', options);
   > myCallback({  ...  });
 ```
 
-#### Varibale JSONP
+#### Değişken JSONP
 
 ```php
-  $json->send_var('myVariable', options);
+  $json->var('myVariable', options);
   > var myVariable = {  ...  };
 ```
