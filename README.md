@@ -15,8 +15,9 @@
 <b>* JSON bir nesne gösterimi olduğu için nesneler optimize edilmektedir.</b>
 <br>
 <br>
-## Kullanımı
-```php
+# Kullanımı
+<hr>
+<code>
 <?php
 require 'api.class.php';
 
@@ -35,4 +36,4 @@ $api->status(200);
 //JSON'u gönder
 $api->send();
 ?>
-```
+</code>
