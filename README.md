@@ -1,20 +1,20 @@
-# PHP ile JSON Derleme 
-<code>json_encode</code> fonksiyonunu basitleştirir.
+# Compiling JSON with PHP
+It simplifies the <code>json_encode</code> function.
 <br>
 <br>
-Özellikleri:
+Features:
 <br>
 <ul>
-  <li>Kolay: Basit bir şekilde derlenen fonksiyonlar.</li>
-  <li>Hızlı: JSON derlenirken, json_encode() fonksiyonu kullanılır.</li>
-  <li>Güvenli: headers'ler otomatik olarak ayarlanır.</li>
-  <li>Tamamlayıcı: Nesneler, özellikler veya diziler ekleyebilirsiniz.</li>
-  <li>Geri dönüş veya değişken için ayarlanabilir JSON seçeneği.</li>
-  <li>JSONP ve jQuery uyumlu.</li>
+  <li>Easy: Simply compiled functions.</li>
+  <li>Quick: The json_encode() function is used when compiling JSON.</li>
+  <li>Secure: headers are set automatically.</li>
+  <li>Supplementary: You can add objects, properties, or arrays.</li>
+  <li>Configurable JSON option for return or variable.</li>
+  <li>JSONP and jQuery compatible.</li>
 </ul>
-<b>* JSON bir nesne gösterimi olduğu için nesneler optimize edilmektedir.</b>
+<b>* Objects are optimized because JSON is an object representation.</b>
 
-## Kullanımı
+## Use of
 
 ```php
 <?php
@@ -24,57 +24,57 @@ use BasicAPI\api;
 
 $api = new api();
 
-//JSON'u oluştur
-$api->name = 'buğra';
-$api->surname = 'özkan';
+// generate the JSON
+$api->name = 'bugra';
+$api->surname = 'ozkan';
 $api->age = '17';
 
-//HTTP durum kodu belirle
+// Set HTTP status code
 $api->status(200);
 
-//JSON'u gönder
+//send the JSON
 $api->send();
 ?>
 ```
 
-## JSON seçenekleri
+## JSON options
 
-Yapıcı, geri dönüş ile veya bir değişken içinde JSON, JSONP göndermenize izin verir.
+The constructor allows you to send JSON, JSONP with return or inside a variable.
 
-#### Normal JSON
+#### Regular JSON
 
 ```php
   $api->send(options);
-  > {  ...  }
+  > { ... }
 ```
 
-#### Geri dönüş JSONP
+#### Return JSONP
 
 ```php
   $api->callback('callback', options);
-  > callback({  ...  });
+  > callback({ ... });
 ```
 
-#### Değişken JSONP
+#### Variable JSONP
 
 ```php
   $api->var('variable', options);
-  > var variable = {  ...  };
+  > var variable = { ... };
 ```
 
-#### Seçenekler
+#### Options
 
-[Varsayılan seçenekler kullanılmaktadır.](http://php.net/manual/en/function.json-encode.php)
+[Default options are used.](http://php.net/manual/en/function.json-encode.php)
 
-Örnek:
+Sample:
 
-```php 
+```php
 $api->send(JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
 ```
 
-## JSON doğrulama
+## JSON validation
 
-JSON'u doğrulamak için, JSON dizesini encode() yöntemi aracılığıyla geri alabilir ve ardından başka bir kitaplıktan geçirebilirsiniz.
+To validate the JSON, you can get the JSON string back via the encode() method and then pass it through another library.
 
 ```php
 $jsonString = $api->encode();
