@@ -13,6 +13,12 @@
     "php": ">=7.0",
     "bugraozkan/json-php": "*"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/bugraozkan/json-php"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "JsonPhp\\": "src/"
