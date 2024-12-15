@@ -1,81 +1,123 @@
 # Compiling JSON with PHP
-It simplifies the <code>json_encode</code> function.
-<br>
-<br>
-Features:
-<br>
-<ul>
-  <li>Easy: Simply compiled functions.</li>
-  <li>Quick: The json_encode() function is used when compiling JSON.</li>
-  <li>Secure: headers are set automatically.</li>
-  <li>Supplementary: You can add objects, properties, or arrays.</li>
-  <li>Configurable JSON option for return or variable.</li>
-  <li>JSONP and jQuery compatible.</li>
-</ul>
-<b>* Objects are optimized because JSON is an object representation.</b>
+This library simplifies the <code>json_encode</code> function, making it easier to generate and send JSON responses in PHP.
 
-## Use of
+## Installation
+
+Install the library via Composer:
+
+```bash
+composer require bugraozkan/json-php
+```
+
+Include the autoloader in your project:
+
+```php
+require 'vendor/autoload.php';
+```
+
+## Features
+
+<ul>
+  <li><b>Easy:</b> Simplified API for creating and sending JSON responses.</li>
+  <li><b>Quick:</b> Built on PHP's <code>json_encode</code> for fast performance.</li>
+  <li><b>Secure:</b> Automatically sets appropriate HTTP headers.</li>
+  <li><b>Flexible:</b> Supports adding objects, properties, or arrays dynamically.</li>
+  <li><b>Configurable:</b> Allows customization of JSON encoding options.</li>
+  <li><b>Compatible:</b> Works seamlessly with JSONP and jQuery.</li>
+</ul>
+
+<b>Note:</b> Objects are optimized to leverage JSON's inherent object representation.
+
+## Usage Example
 
 ```php
 <?php
-require 'api.class.php';
+require 'ApiResponse.class.php';
 
-use BasicAPI\api;
+use JsonPHP\ApiResponse;
 
-$api = new api();
+// Create an API response instance
+$response = ApiResponse::create();
 
-// generate the JSON
-$api->name = 'bugra';
-$api->surname = 'ozkan';
-$api->age = '17';
+// Add data to the response
+$response->setData([
+    'name' => 'Bugra',
+    'surname' => 'Ozkan',
+    'age' => 21
+]);
 
-// Set HTTP status code
-$api->status(200);
+// Set the HTTP status code
+$response->setStatus(200);
 
-//send the JSON
-$api->send();
-?>
+// Send the JSON response
+$response->send();
 ```
 
-## JSON options
+## Advanced JSON Options
 
-The constructor allows you to send JSON, JSONP with return or inside a variable.
+### Sending Regular JSON
 
-#### Regular JSON
+Use the <code>send</code> method to send a standard JSON response.
 
 ```php
-  $api->send(options);
-  > { ... }
+$response->send();
+// Output: { "name": "Bugra", "surname": "Ozkan", "age": 21 }
 ```
 
-#### Return JSONP
+### Returning JSONP
+
+To return a JSONP response, specify a callback function:
 
 ```php
-  $api->callback('callback', options);
-  > callback({ ... });
+$response->sendHeaders(['Content-Type' => 'application/javascript']);
+echo "callback(" . json_encode([
+    'status' => 200,
+    'data' => [
+        'name' => 'Bugra',
+        'surname' => 'Ozkan',
+        'age' => 21
+    ]
+]) . ");";
 ```
 
-#### Variable JSONP
+Output:
+
+```javascript
+callback({ "status": 200, "data": { "name": "Bugra", "surname": "Ozkan", "age": 21 }});
+```
+
+### JSON Validation
+
+To validate JSON, use the <code>json_encode</code> method to retrieve the JSON string and validate it:
 
 ```php
-  $api->var('variable', options);
-  > var variable = { ... };
+$jsonString = json_encode([
+    'name' => 'Bugra',
+    'surname' => 'Ozkan',
+    'age' => 21
+]);
+
+// Validate the JSON with an external library or tool
 ```
 
-#### Options
+## JSON Encoding Options
 
-[Default options are used.](http://php.net/manual/en/function.json-encode.php)
-
-Sample:
+You can customize the JSON encoding options using constants from PHP's <code>json_encode</code> function. For example:
 
 ```php
-$api->send(JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+$response->setData([
+    'name' => 'Bugra',
+    'surname' => 'Ozkan',
+    'age' => 21
+]);
+$response->sendHeaders(['Content-Type' => 'application/json']);
+echo json_encode($response->data, JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
 ```
 
-## JSON validation
+## Notes
 
-To validate the JSON, you can get the JSON string back via the encode() method and then pass it through another library.
+- This library is compatible with PHP 7.0 and later.
+- Default JSON encoding options are used unless specified otherwise.
+- Supports custom HTTP headers for enhanced flexibility.
 
-```php
-$jsonString = $api->encode();
-```
+For more details, refer to the [PHP Documentation on JSON Encoding](https://www.php.net/manual/en/function.json-encode.php).
