@@ -34,7 +34,7 @@ require 'vendor/autoload.php';
 <?php
 require 'ApiResponse.class.php';
 
-use JsonPHP\ApiResponse;
+use JsonPhp\ApiResponse;
 
 // Create an API response instance
 $response = ApiResponse::create();
