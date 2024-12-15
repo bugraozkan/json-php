@@ -32,7 +32,7 @@ require 'vendor/autoload.php';
 
 ```php
 <?php
-require 'ApiResponse.class.php';
+require 'ApiResponse.php';
 
 use JsonPhp\ApiResponse;
 
