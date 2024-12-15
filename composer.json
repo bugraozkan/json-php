@@ -10,8 +10,7 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
-    "bugraozkan/json-php": "*"
+    "php": ">=7.0"
   },
   "repositories": [
     {
