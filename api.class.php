@@ -1,5 +1,5 @@
 <?php
-namespace JsonPHP;
+namespace JsonPhp;
 
 class ApiResponse
 {
