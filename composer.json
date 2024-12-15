@@ -1,0 +1,31 @@
+{
+  "name": "bugraozkan/json-php",
+  "description": "It allows you to create a PHP object and convert it to json.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Buğra Özkan",
+      "email": "my@bugraozkan.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/bugraozkan/json-php"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "JsonPhp\\": "src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
