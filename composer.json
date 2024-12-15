@@ -10,14 +10,9 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "bugraozkan/json-php": "*"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/bugraozkan/json-php"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "JsonPhp\\": "src/"
@@ -26,6 +21,6 @@
   "config": {
     "optimize-autoloader": true
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true
 }
