@@ -136,7 +136,7 @@ class ApiResponse
         if ($jsonData === false) {
             // JSON encode error situation
             $this->status = 500;
-            $this->data = ['error' => 'An error occurred while encoding the response data to JSON. Please ensure the data is valid.'];
+            $this->data = ['error' => 'An error occurred while encoding the response data to JSON. Please ensure the data is valid!'];
             echo json_encode(['status' => $this->status, 'data' => $this->data]);
         } else {
             // Send the successfully encoded JSON data
