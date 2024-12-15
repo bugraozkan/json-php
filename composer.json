@@ -21,6 +21,6 @@
   "config": {
     "optimize-autoloader": true
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true
 }
